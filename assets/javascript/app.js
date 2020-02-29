@@ -20,6 +20,7 @@ function embedGifs(gifArray) {
   $(".gif-container").empty();
   gifArray.forEach((element) => {
     var newDiv = $("<div>");
+    newDiv.addClass("gifDiv");
     var newGif = $("<img>");
     var newRating = $("<p>");
 
