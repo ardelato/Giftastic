@@ -21,11 +21,16 @@ function embedGifs(gifArray) {
   gifArray.forEach((element) => {
     var newDiv = $("<div>");
     newDiv.addClass("gifDiv");
+
     var newGif = $("<img>");
     var newRating = $("<p>");
 
     newRating.text(element.rating);
-    newGif.attr("src", element.images.original.url);
+    newGif.attr("src", element.images.original_still.url);
+    newGif.attr("data-still-url", element.images.original_still.url);
+    newGif.attr("data-animate-url", element.images.original.url);
+    newGif.attr("data-status", "still");
+
     newDiv.append(newRating);
     newDiv.append(newGif);
     newDiv.appendTo(".gif-container");
@@ -41,6 +46,7 @@ function runQuery(animal) {
     method: "GET"
   }).then(function(response) {
     console.log(response);
+
     embedGifs(response.data);
   });
 }
@@ -64,4 +70,14 @@ $(window).on("load", function() {
 $(document).on("click", "button", function() {
   console.log($(this).text());
   runQuery($(this).text());
+});
+
+$(document).on("click", "img", function() {
+  if ($(this).attr("data-status") === "still") {
+    $(this).attr("src", $(this).data("animate-url"));
+    $(this).attr("data-status", "animate");
+  } else {
+    $(this).attr("src", $(this).data("still-url"));
+    $(this).attr("data-status", "still");
+  }
 });
