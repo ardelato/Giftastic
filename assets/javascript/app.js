@@ -2,7 +2,7 @@
 var apiKEY = "dN47xDe3nAYUGnI6SP6L7vdcOCQFqXel";
 var baseURL = "https://api.giphy.com/v1/gifs/search?";
 
-var limit = 1; //limit
+var limit = 10; //limit
 //q
 
 var topics = ["eagle", "linx", "flamingo"];
@@ -17,6 +17,7 @@ function loadTopics() {
 }
 
 function embedGifs(gifArray) {
+  $(".gif-container").empty();
   gifArray.forEach((element) => {
     var newDiv = $("<div>");
     var newGif = $("<img>");
@@ -54,6 +55,7 @@ $(window).on("load", function() {
       topics.push(newAnimal);
       loadTopics();
     }
+    $("#name").val("");
     event.preventDefault();
   });
 });
