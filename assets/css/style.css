@@ -1,9 +1,11 @@
+.list-container {
+  text-align: center;
+}
+
 .main-content-container {
   display: flex;
 }
-
 .gif-container {
-  background-color: hotpink;
   flex-wrap: wrap;
   display: flex;
   width: 75%;
@@ -12,12 +14,30 @@
 button {
   background-color: #6699cc;
   color: white;
+
   margin: 10px;
   padding: 10px 15px;
+
+  border: 1px solid black;
   border-radius: 10px;
-  border: none;
+
   font-size: 16px;
   font-family: "Trade Winds";
+
+  /* Removes hitbox of button */
+  outline: none;
+
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 2px 4px 10px gray;
+}
+
+button:active {
+  background-color: rgb(51, 153, 255);
+  position: relative;
+  top: 1px;
 }
 
 .gifDiv {
@@ -26,7 +46,6 @@ button {
 }
 
 .input-side {
-  background-color: indianred;
   float: right;
   font-family: "Trade Winds";
 }

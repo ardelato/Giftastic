@@ -3,7 +3,9 @@ var apiKEY = "dN47xDe3nAYUGnI6SP6L7vdcOCQFqXel";
 var baseURL = "https://api.giphy.com/v1/gifs/search?";
 
 var limit = 10; //limit
-//q
+
+//Will hold the current clicked button
+var activeButton;
 
 var topics = ["eagle", "linx", "flamingo"];
 
@@ -69,6 +71,14 @@ $(window).on("load", function() {
 
 $(document).on("click", "button", function() {
   console.log($(this).text());
+  console.log($(this));
+  if (activeButton !== undefined) {
+    activeButton.css("background-color", "#6699cc");
+    activeButton.css("border", "1px solid black");
+  }
+  activeButton = $(this);
+  activeButton.css("background-color", "rgb(51, 10, 255)");
+  activeButton.css("border", "none");
   runQuery($(this).text());
 });
 
