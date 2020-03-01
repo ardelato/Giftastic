@@ -58,7 +58,7 @@ $(window).on("load", function() {
     var newAnimal = $("input")
       .first()
       .val();
-    if (!topics.includes(newAnimal)) {
+    if (!topics.includes(newAnimal) && newAnimal !== "") {
       topics.push(newAnimal);
       loadTopics();
     }
