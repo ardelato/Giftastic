@@ -49,3 +49,30 @@ button:active {
   float: right;
   font-family: "Trade Winds";
 }
+#name {
+  border-radius: 20px;
+  padding: 5px;
+  font-family: "Trade Winds";
+}
+#submit-button {
+  background-color: #6699cc;
+  color: white;
+
+  margin: 0px;
+  padding: 2px 25px;
+
+  border: none;
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-family: "Trade Winds";
+
+  /* Removes hitbox of button */
+  outline: none;
+
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  box-shadow: 2px 2px 10px gray;
+}
