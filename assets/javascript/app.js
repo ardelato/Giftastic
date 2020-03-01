@@ -7,7 +7,23 @@ var limit = 10; //limit
 //Will hold the current clicked button
 var activeButton;
 
-var topics = ["eagle", "linx", "flamingo"];
+var topics = [
+  "eagle",
+  "linx",
+  "flamingo",
+  "gorilla",
+  "cat",
+  "donkey",
+  "horse",
+  "octupus",
+  "tiger",
+  "elephant",
+  "lion",
+  "spider monkey",
+  "ocelot",
+  "falcon",
+  "dog"
+];
 
 function loadTopics() {
   $(".list-container").empty();
@@ -27,7 +43,7 @@ function embedGifs(gifArray) {
     var newGif = $("<img>");
     var newRating = $("<p>");
 
-    newRating.text(element.rating);
+    newRating.text("Rating: " + element.rating);
     newGif.attr("src", element.images.original_still.url);
     newGif.attr("data-still-url", element.images.original_still.url);
     newGif.attr("data-animate-url", element.images.original.url);

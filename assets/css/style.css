@@ -9,6 +9,8 @@
   flex-wrap: wrap;
   display: flex;
   width: 75%;
+  border-right: 1px solid gainsboro;
+  margin-right: 10px;
 }
 
 button {
@@ -53,8 +55,10 @@ button:active {
   border-radius: 20px;
   padding: 5px;
   font-family: "Trade Winds";
+  margin-bottom: 10px;
 }
 #submit-button {
+  float: right;
   background-color: #6699cc;
   color: white;
 
